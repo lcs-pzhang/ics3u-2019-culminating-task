@@ -1,11 +1,11 @@
 #Greenfoot project file
 class.Ground.image=ground.png
-class.MyWorld.image=clouds.jpg
+class.MyWorld.image=bubble-0.gif
 class.Pengu.image=pengu-right.png
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
+editor.fx.0.height=722
+editor.fx.0.width=800
+editor.fx.0.x=640
+editor.fx.0.y=23
 height=545
 package.numDependencies=0
 package.numTargets=3
@@ -47,5 +47,5 @@ target3.y=0
 version=3.0.0
 width=818
 world.lastInstantiated=MyWorld
-xPosition=1648
-yPosition=-24
+xPosition=408
+yPosition=39
