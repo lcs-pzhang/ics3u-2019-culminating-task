@@ -23,7 +23,6 @@ public class MyWorld extends World
         score = 0;
         showScore();
 
-        
         //Begin with the first bubble image  which will  be the the 'bubble'
         //array of 30 values
         bubble = new GreenfootImage[30];
@@ -47,32 +46,37 @@ public class MyWorld extends World
 
     }
 
-   public void addScore(int points)
-   {
-      score = score + points;
-      showScore(); 
-   }
-    
-   private void showScore()
-   {
-       if (score < 20)
-       {
-          showText("Bad: " + score, 80, 25); 
-       }
-       
-       if (score < 50)
-       {
-         showText("Okay: " + score, 80, 25); 
-       }
-       
-       if (score < 70)
-       {
-         showText("Great: " + score, 80, 25); 
-       }
-       
-       if (score <= 100)
-       {
-         showText("Perfect: " + score, 80, 25); 
-       }
-   }
+    public void addScore(int points)
+    {
+        score = score + points;
+        showScore(); 
+    }
+
+    private void showScore()
+    {
+        if (score <= 20)
+        {
+            showText("Bad: " + score, 80, 25); 
+        }
+
+        if (score > 50)
+        {
+            showText("Okay: " + score, 80, 25); 
+        }
+
+        if (score > 70)
+        {
+            showText("Great: " + score, 80, 25); 
+        }
+
+        if (score >= 100)
+        {
+            showText("Perfect: " + score, 80, 25); 
+        }
+    }
+
+    private void showEndMessage()
+    {
+        showText("Your final score: " + score + "points", 390, 170);
+    }
 }
