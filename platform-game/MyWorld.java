@@ -56,22 +56,22 @@ public class MyWorld extends World
     {
         if (score <= 20)
         {
-            showText("Bad: " + score, 80, 25); 
+            showText("Bad: " + score, 50, 25); 
         }
 
         if (score > 50)
         {
-            showText("Okay: " + score, 80, 25); 
+            showText("Okay: " + score, 50, 25); 
         }
 
         if (score > 70)
         {
-            showText("Great: " + score, 80, 25); 
+            showText("Great: " + score, 50, 25); 
         }
 
         if (score >= 100)
         {
-            showText("Perfect: " + score, 80, 25); 
+            showText("Perfect: " + score, 50, 25); 
         }
     }
 
