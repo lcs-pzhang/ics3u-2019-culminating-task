@@ -27,9 +27,9 @@ public class MyWorld extends World
         //array of 30 values
         bubble = new GreenfootImage[30];
         //loop through the images from the images folder
-        for (int i = 0; i < bubble.length; i+=1)
+        for (int index = 0; index < bubble.length; index+=1)
         {
-            bubble[i] = new GreenfootImage("bubble-" + i + ".gif");
+            bubble[index] = new GreenfootImage("bubble-" + index + ".gif");
         }
         //Set the frame counter
         frames = 0;
