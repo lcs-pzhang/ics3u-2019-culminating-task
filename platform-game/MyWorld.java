@@ -43,7 +43,13 @@ public class MyWorld extends World
         // Track animation stage (e.g first image, second image, etc)
         int stage = frames / delay;
         // Change the image of the actor to create an animation
-
+        
+        //When to start the song
+        if (frames == 10)
+        {
+          GreenfootSound sound = new GreenfootSound("Gift.mp3");
+          sound.play();
+        }
     }
 
     public void addScore(int points)
