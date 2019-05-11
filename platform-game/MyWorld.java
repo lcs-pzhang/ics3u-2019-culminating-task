@@ -11,6 +11,7 @@ public class MyWorld extends World
     private int score;
     private int frames;
     private GreenfootImage bubble[];
+    private int time;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -21,7 +22,12 @@ public class MyWorld extends World
         super(498, 372, 1); 
         score = 0;
         showScore();
-
+        time = 9400;
+        showTime();
+        //Start the song
+        // GreenfootSound sound = new GreenfootSound("Gift.mp3");
+        // sound.play();
+        
         // Add a Bubble object
         Bubbles background = new Bubbles();
         addObject(background, getWidth() / 2, getHeight() / 2);
@@ -30,12 +36,8 @@ public class MyWorld extends World
 
     public void act()
     {
-        //When to start the song
-        if (frames == 10)
-        {
-            GreenfootSound sound = new GreenfootSound("Gift.mp3");
-            sound.play();
-        }
+        countTime();
+    
     }
 
     public void addScore(int points)
@@ -70,5 +72,23 @@ public class MyWorld extends World
     private void showEndMessage()
     {
         showText("Your final score: " + score + "points", 390, 170);
+    }
+    
+    private void countTime()
+    {
+        time--;
+        showTime();
+        if (time == 9399)
+        {
+          GreenfootSound sound = new GreenfootSound("Gift.mp3");
+          sound.play();  
+        }
+        
+    
+    }
+
+    private void showTime()
+    {
+        showText("Time: " + time, 435, 15);
     }
 }

@@ -39,11 +39,11 @@ public class Bubbles extends Actor
     {
         // Track frames / time in scenario
         frames += 1;
-        System.out.println("frames " + frames);
+        
 
         // Track animation stage (e.g first image, second image, etc)
         int stage = frames / delay;
-        System.out.println("stage " + stage);
+        
 
         // Change the image of the actor to create an animation
         if (stage < bubble.length)
