@@ -10,8 +10,32 @@ public class MyWorld extends World
 {
     private int score;
     private int frames;
-    private GreenfootImage bubble[];
+    private GreenfootImage bubble[]; 
     private int time;
+    private String [] shadownotes = { "Star", "Star", "Star", "Star", "Plus",
+    "Plus", "Minus", "Minus", "Cross", "Arrow", "Cross", "Arrow", "Cross", 
+    "Arrow", "Plus", "Plus", "Plus", "Minus", "Minus", "Star", "Star", "Star",
+    "Star", "Star", "Arrow", "Arrow", "Arrow", "Minus", "Cross", "Minus",
+"Cross", "Minus", "Cross", "Minus", "Arrow", "Plus", "Arrow", "Plus", "Arrow",
+"Plus","Star", "Star", "Star", "Star", "Arrow", "Cross", "Plus", "Minus",
+"Plus", "Cross", "Arrow", "Minus", "Minus", "Plus", "Cross", "Arrow", "Plus",
+"Cross","Arrow", "Cross", "Arrow", "Star", "Star", "Star", "Star", "Star",
+"Star", "Plus", "Plus", "Plus", "Arrow", "Arrow", "Arrow", "Arrow", "Minus", 
+"Minus", "Minus", "Cross", "Cross", "Cross"};
+
+private String[] realnotes = { "Star", "Star", "Star", "Star", "Plus",
+    "Plus", "Minus", "Minus", "Cross", "Arrow", "Cross", "Arrow", "Cross", 
+    "Arrow", "Plus", "Plus", "Plus", "Minus", "Minus", "Star", "Star", "Star",
+    "Star", "Star", "Arrow", "Arrow", "Arrow", "Minus", "Cross", "Minus",
+"Cross", "Minus", "Cross", "Minus", "Arrow", "Plus", "Arrow", "Plus", "Arrow",
+"Plus","Star", "Star", "Star", "Star", "Arrow", "Cross", "Plus", "Minus",
+"Plus", "Cross", "Arrow", "Minus", "Minus", "Plus", "Cross", "Arrow", "Plus",
+"Cross","Arrow", "Cross", "Arrow", "Star", "Star", "Star", "Star", "Star",
+"Star", "Plus", "Plus", "Plus", "Arrow", "Arrow", "Arrow", "Arrow", "Minus", 
+"Minus", "Minus", "Cross", "Cross", "Cross"};
+
+private String[] realbuttons = { "left + right",  };
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -83,7 +107,11 @@ public class MyWorld extends World
           GreenfootSound sound = new GreenfootSound("Gift.mp3");
           sound.play();  
         }
-        
+       
+        if (time == 0)
+        {
+            Greenfoot.stop();
+        }
     
     }
 
