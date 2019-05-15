@@ -74,23 +74,25 @@ private String[] realbuttons = { "left + right",  };
     {
         if (score <= 20)
         {
-            showText("Bad: " + score, 50, 25); 
+            showText("Bad: " + score, 30, 9); 
         }
 
         if (score > 50)
         {
-            showText("Okay: " + score, 50, 25); 
+            showText("Okay: " + score, 30, 9); 
         }
 
         if (score > 70)
         {
-            showText("Great: " + score, 50, 25); 
+            showText("Great: " + score, 30, 9); 
         }
 
         if (score >= 100)
         {
-            showText("Perfect: " + score, 50, 25); 
+            showText("Perfect: " + score, 30, 9); 
         }
+        
+        showText("[Gift] From The Princess Who Brought Sleep", 255, 29);
     }
 
     private void showEndMessage()
@@ -117,6 +119,6 @@ private String[] realbuttons = { "left + right",  };
 
     private void showTime()
     {
-        showText("Time: " + time, 435, 15);
+        showText("Time: " + time, 560, 10);
     }
 }
