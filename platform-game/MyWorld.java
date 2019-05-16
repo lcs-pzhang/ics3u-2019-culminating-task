@@ -12,29 +12,30 @@ public class MyWorld extends World
     private int frames;
     private GreenfootImage bubble[]; 
     private int time;
-    private String [] shadownotes = { "Star", "Star", "Star", "Star", "Plus",
-    "Plus", "Minus", "Minus", "Cross", "Arrow", "Cross", "Arrow", "Cross", 
-    "Arrow", "Plus", "Plus", "Plus", "Minus", "Minus", "Star", "Star", "Star",
-    "Star", "Star", "Arrow", "Arrow", "Arrow", "Minus", "Cross", "Minus",
-"Cross", "Minus", "Cross", "Minus", "Arrow", "Plus", "Arrow", "Plus", "Arrow",
-"Plus","Star", "Star", "Star", "Star", "Arrow", "Cross", "Plus", "Minus",
-"Plus", "Cross", "Arrow", "Minus", "Minus", "Plus", "Cross", "Arrow", "Plus",
-"Cross","Arrow", "Cross", "Arrow", "Star", "Star", "Star", "Star", "Star",
-"Star", "Plus", "Plus", "Plus", "Arrow", "Arrow", "Arrow", "Arrow", "Minus", 
-"Minus", "Minus", "Cross", "Cross", "Cross"};
+   
 
-private String[] realnotes = { "Star", "Star", "Star", "Star", "Plus",
-    "Plus", "Minus", "Minus", "Cross", "Arrow", "Cross", "Arrow", "Cross", 
-    "Arrow", "Plus", "Plus", "Plus", "Minus", "Minus", "Star", "Star", "Star",
-    "Star", "Star", "Arrow", "Arrow", "Arrow", "Minus", "Cross", "Minus",
-"Cross", "Minus", "Cross", "Minus", "Arrow", "Plus", "Arrow", "Plus", "Arrow",
-"Plus","Star", "Star", "Star", "Star", "Arrow", "Cross", "Plus", "Minus",
-"Plus", "Cross", "Arrow", "Minus", "Minus", "Plus", "Cross", "Arrow", "Plus",
-"Cross","Arrow", "Cross", "Arrow", "Star", "Star", "Star", "Star", "Star",
-"Star", "Plus", "Plus", "Plus", "Arrow", "Arrow", "Arrow", "Arrow", "Minus", 
-"Minus", "Minus", "Cross", "Cross", "Cross"};
+private String[] realnotes = { "★", "★", "★", "★", "+",
+    "+", "−", "−", "╳", "←", "╳", "←", "╳", 
+    "←", "+", "+", "+", "−", "−", "★", "★", "★",
+    "★", "★", "←", "←", "←", "−", "╳", "−",
+"╳", "−", "╳", "−", "←", "+", "←", "+", "←",
+"+","★", "★", "★", "★", "←", "╳", "+", "−",
+"+", "╳", "←", "−", "−", "+", "−", "←", "+",
+"╳","←", "╳", "←", "★", "★", "★", "★", "★",
+"★", "+", "+", "+", "←", "←", "←", "←", "−", 
+"−", "−", "╳", "╳", "╳"};
 
-private String[] realbuttons = { "left + right",  };
+private String[] realkeys = { "left + right", "left + right", "left + right",
+"left + right", "up", "up", "down", "down", "right", "left", "right", "left",
+"right", "left", "up", "up", "up", "down", "down", "left + right",
+"left + right", "left + right", "left + right", "left + right", "left", "left",
+"left", "down", "right", "down", "right", "down", "right", "down", "left", "up"
+, "left", "up", "left", "up", "left + right", "left + right", "left + right",
+"left + right", "left", "right", "up", "down", "up", "right", "left", "down",
+"down", "up", "down", "left", "up", "right", "left", "right", "left", 
+ "left + right", "left + right", "left + right","left + right", "left + right",
+"left + right", "up", "up", "up", "left", "left", "left", "left", "down", 
+"down", "down", "right", "right", "right"};
     
     /**
      * Constructor for objects of class MyWorld.
