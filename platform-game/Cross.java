@@ -15,5 +15,19 @@ public class Cross extends Actor
     public void act() 
     {
         // Add your action code here.
-    }    
+    }  
+    
+    /**
+     * Check whether a keyboard key has been pressed and react if it has.
+     */
+     private void checkKeyPress()
+    {
+        if (Greenfoot.isKeyDown("right")) 
+        {
+           MyWorld world = (MyWorld)getWorld();
+           world.addScore(10);
+           
+           world.removeObject(this);
+        }
+    }
 }

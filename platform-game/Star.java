@@ -15,5 +15,18 @@ public class Star extends Actor
     public void act() 
     {
         // Add your action code here.
-    }    
+    }  
+    
+    /**
+     * Check whether a keyboard key has been pressed and react if it has.
+     */
+     private void checkKeyPress()
+    {
+        if (Greenfoot.isKeyDown("left + right")) 
+        {
+           MyWorld world = (MyWorld)getWorld();
+           world.addScore(15);
+           world.removeObject(this);
+        }
+    }
 }
