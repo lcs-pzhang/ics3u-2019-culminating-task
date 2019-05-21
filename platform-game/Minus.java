@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Minus extends Actor
 {
+    private int speed;
     /**
      * Act - do whatever the Minus wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -26,6 +27,11 @@ public class Minus extends Actor
         {
            MyWorld world = (MyWorld)getWorld();
            world.addScore(10);
+      
+           world.removeObject(this);
+        } else {
+            MyWorld world = (MyWorld)getWorld();
+           world.addScore(-15);
       
            world.removeObject(this);
         }
