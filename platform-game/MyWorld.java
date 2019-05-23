@@ -183,8 +183,13 @@ public class MyWorld extends World
                     //add just that one note (whatever note corresponds to currentNote)
                     if (realNotes[currentNote] == "★")
                     {
-                        Star newStar = new Star();
-                        addObject(newStar, xPosition[currentNote], 0);
+                        // Falling note
+                        Star newFallingNote = new Star(true);
+                        addObject(newFallingNote, xPosition[currentNote], 0);
+                        
+                        // Stationary note
+                        Star newStationaryNote = new Star(false);
+                        addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
                     }
                     //else if 
                     
