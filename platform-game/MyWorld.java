@@ -87,8 +87,7 @@ public class MyWorld extends World
         // Add a Bubble object
         Bubbles background = new Bubbles();
         addObject(background, getWidth() / 2, getHeight() / 2);
-        
-        
+
         // Check the array lengths
         // System.out.println("realNotes length is " + realNotes.length);
         // System.out.println("delay length is " + delay.length);
@@ -101,7 +100,6 @@ public class MyWorld extends World
         countTime();
         checkForNotes();
     }
-    
 
     public void addScore(int points)
     {
@@ -166,17 +164,17 @@ public class MyWorld extends World
     {
         // Increment frames
         frames += 1;
-        
+
         // checking that for each second, if a full second has passed.
         if (frames % 60 == 0)
         {
             int currentSecond = frames / 60;
             showText("" + currentSecond, getWidth() - 100, 100);
-            
+
             //for each second, we're looping over every element of the real notes array/
             for (int currentNote = 0; currentNote < realNotes.length; currentNote +=1)
             {
-           
+
                 // is it time to check a new object
                 if (currentSecond == delay[currentNote])
                 {
@@ -186,13 +184,32 @@ public class MyWorld extends World
                         // Falling note
                         Star newFallingNote = new Star(true);
                         addObject(newFallingNote, xPosition[currentNote], 0);
-                        
+
                         // Stationary note
                         Star newStationaryNote = new Star(false);
                         addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
                     }
-                    //else if 
-                    
+                    else if (realNotes[currentNote] == "+")
+                    {
+                        // Falling note
+                        Arrow newFallingNote = new Arrow(true);
+                        addObject(newFallingNote, xPosition[currentNote], 0);
+
+                        // Stationary note
+                        Arrow newStationaryNote = new Arrow(false);
+                        addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
+                    }
+                     else if (realNotes[currentNote] == "−")
+                    {
+                        // Falling note
+                        Minus newFallingNote = new Minus(true);
+                        addObject(newFallingNote, xPosition[currentNote], 0);
+
+                        // Stationary note
+                        Minus newStationaryNote = new Minus(false);
+                        addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
+                    }
+
                 }
 
             }

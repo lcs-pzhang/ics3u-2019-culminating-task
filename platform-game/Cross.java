@@ -9,13 +9,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Cross extends Actor
 {
     private int speed;
+    private boolean shouldFall;
+    
+    /**
+     * Constructor – runs once when the cross is created
+     */
+    Cross(boolean crossShouldFall)
+    {
+        shouldFall = crossShouldFall;
+    }
+    
     /**
      * Act - do whatever the Cross wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        // Add your action code here.
+        // Fall
+        setLocation(getX(), getY() + 1);
     }  
     
     /**
