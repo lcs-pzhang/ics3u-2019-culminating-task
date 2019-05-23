@@ -30,7 +30,7 @@ public class Arrow extends Actor
         if (shouldFall == true)
         {
             // Fall
-            setLocation(getX(), getY() + 1);
+            setLocation(getX(), getY() + 7);
         }
     }  
 

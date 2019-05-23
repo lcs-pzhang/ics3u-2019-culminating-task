@@ -42,13 +42,13 @@ public class MyWorld extends World
             "left + right", "up", "up", "up", "left", "left", "left", "left", "down", 
             "down", "down", "right", "right", "right"};
 
-    private int[] delay = {3, 14, 18, 22, 24, 25, 30, 33, 38,
-            42, 47, 50, 55, 58, 63, 67, 70, 72, 75, 78, 81, 84,
-            86, 89, 90, 93, 96, 98, 100, 102, 105, 105, 107, 110,
-            112, 113, 115, 118, 122, 124, 127, 128, 129, 130, 133,
-            135, 137, 139, 141, 143, 143, 148, 148, 150, 152, 154,
-            155, 157, 159, 161, 163, 164, 166, 168, 170, 170, 173,
-            175, 177, 179, 180, 181, 182, 184, 187, 191, 195, 199, 200, 201};
+    private int[] delay = {2, 4, 6, 8, 10, 11, 13, 14, 16,
+            19, 21, 23, 25, 27, 28, 30, 31, 33, 35, 37, 39, 41,
+            43, 44, 44, 45, 47, 48, 50, 50, 50, 52, 54, 55,
+            57, 59, 61, 63, 64, 66, 67, 69, 70, 71, 73,
+            73, 75, 75, 77, 77, 77, 79, 80, 80, 81, 81,
+            83, 85, 85, 87, 88, 90, 91, 92, 93, 93, 93,
+            94, 94, 95, 95, 97, 97, 99, 99, 100, 100, 103, 103, 103};
 
     private int[] xPosition = {495, 491, 487, 483, 460, 460,100,
             104, 108, 112, 150, 150, 175, 179, 183, 187, 195, 195,
@@ -192,11 +192,11 @@ public class MyWorld extends World
                     else if (realNotes[currentNote] == "+")
                     {
                         // Falling note
-                        Arrow newFallingNote = new Arrow(true);
+                        Plus newFallingNote = new Plus(true);
                         addObject(newFallingNote, xPosition[currentNote], 0);
 
                         // Stationary note
-                        Arrow newStationaryNote = new Arrow(false);
+                        Plus newStationaryNote = new Plus(false);
                         addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
                     }
                      else if (realNotes[currentNote] == "−")

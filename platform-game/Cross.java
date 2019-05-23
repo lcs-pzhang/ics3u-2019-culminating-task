@@ -26,7 +26,7 @@ public class Cross extends Actor
     public void act() 
     {
         // Fall
-        setLocation(getX(), getY() + 1);
+        setLocation(getX(), getY() + 7);
     }  
     
     /**
