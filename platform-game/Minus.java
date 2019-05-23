@@ -9,13 +9,27 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Minus extends Actor
 {
     private int speed;
+    private boolean shouldFall;
+    
+    /**
+     * Constructor – runs once when the minus is created
+     */
+    Minus(boolean minusShouldFall)
+    {
+        shouldFall = minusShouldFall;
+    }
     /**
      * Act - do whatever the Minus wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        // Add your action code here.
+        // Move the star down
+        if (shouldFall == true)
+        {
+            // Fall
+            setLocation(getX(), getY() + 1);
+        }
     } 
     
     /**

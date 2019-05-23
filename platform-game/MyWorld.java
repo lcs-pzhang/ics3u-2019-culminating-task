@@ -209,7 +209,26 @@ public class MyWorld extends World
                         Minus newStationaryNote = new Minus(false);
                         addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
                     }
+                     else if (realNotes[currentNote] == "╳")
+                    {
+                        // Falling note
+                        Cross newFallingNote = new Cross(true);
+                        addObject(newFallingNote, xPosition[currentNote], 0);
 
+                        // Stationary note
+                        Cross newStationaryNote = new Cross(false);
+                        addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
+                    }
+                    else if (realNotes[currentNote] == "←")
+                    {
+                        // Falling note
+                        Arrow newFallingNote = new Arrow(true);
+                        addObject(newFallingNote, xPosition[currentNote], 0);
+
+                        // Stationary note
+                        Arrow newStationaryNote = new Arrow(false);
+                        addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
+                    }
                 }
 
             }
