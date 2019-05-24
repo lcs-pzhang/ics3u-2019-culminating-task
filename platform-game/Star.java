@@ -12,11 +12,12 @@ public class Star extends Actor
     private boolean shouldFall;
     private int frames;
     private boolean stillInWorld;
+    private int yPositionTargetValue;
     
     /**
      * Constructor – runs once when the star is created
      */
-    Star(boolean starShouldFall)
+    Star(boolean starShouldFall, int yPositionTarget)
     {
         // Whether this star should fall
         shouldFall = starShouldFall;
@@ -26,6 +27,9 @@ public class Star extends Actor
         
         // The object begins in the world
         stillInWorld = true;
+        
+        // Vertical position at which the person needs to press the appropriate key
+        yPositionTargetValue = yPositionTarget;
     }
     
     /**
@@ -71,7 +75,10 @@ public class Star extends Actor
     private void checkKeyPress()
     {
         //if the correct keys are pressed, then the world will add points to the total score and remove that note
-        if (Greenfoot.isKeyDown("left")) 
+        if (Greenfoot.isKeyDown("left") &&
+            Greenfoot.isKeyDown("right") &&
+            getY() <= yPositionTargetValue + 10 &&
+            getY() >= yPositionTargetValue - 10 ) 
         {
             MyWorld world = (MyWorld)getWorld();
             world.addScore(15);

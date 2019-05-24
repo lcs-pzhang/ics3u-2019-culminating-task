@@ -182,11 +182,11 @@ public class MyWorld extends World
                     if (realNotes[currentNote] == "★")
                     {
                         // Falling note
-                        Star newFallingNote = new Star(true);
+                        Star newFallingNote = new Star(true, yPosition[currentNote]);
                         addObject(newFallingNote, xPosition[currentNote], 0);
 
                         // Stationary note
-                        Star newStationaryNote = new Star(false);
+                        Star newStationaryNote = new Star(false, 0);
                         addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
                     }
                     else if (realNotes[currentNote] == "+")
