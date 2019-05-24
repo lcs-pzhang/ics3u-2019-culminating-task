@@ -112,22 +112,22 @@ public class MyWorld extends World
         //These will show the possible score outcomes at the end of the game
         if (score <= 20)
         {
-            showText("Bad: " + score, 30, 9); 
+            showText("Bad: " + score, 70, 9); 
         }
 
         if (score > 50)
         {
-            showText("Okay: " + score, 30, 9); 
+            showText("Okay: " + score, 70, 9); 
         }
 
         if (score > 70)
         {
-            showText("Great: " + score, 30, 9); 
+            showText("Great: " + score, 70, 9); 
         }
 
         if (score >= 100)
         {
-            showText("Perfect: " + score, 30, 9); 
+            showText("Perfect: " + score, 70, 9); 
         }
 
         showText("[Gift] From The Princess Who Brought Sleep", 255, 29);

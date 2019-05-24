@@ -32,6 +32,7 @@ public class Cross extends Actor
             setLocation(getX(), getY() + 3);
         }
         
+        checkKeyPress();
         checkAtBottom();
     }  
     
@@ -40,6 +41,7 @@ public class Cross extends Actor
      */
      private void checkKeyPress()
     {
+        //if the correct keys are pressed, then the world will add points to the total score and remove that note
         if (Greenfoot.isKeyDown("right")) 
         {
            MyWorld world = (MyWorld)getWorld();
