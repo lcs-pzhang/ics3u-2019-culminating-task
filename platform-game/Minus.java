@@ -28,8 +28,10 @@ public class Minus extends Actor
         if (shouldFall == true)
         {
             // Fall
-            setLocation(getX(), getY() + 7);
+            setLocation(getX(), getY() + 3);
         }
+        
+        checkAtBottom();
     } 
     
     /**
@@ -43,11 +45,19 @@ public class Minus extends Actor
            world.addScore(10);
       
            world.removeObject(this);
-        } else {
+        } 
+    
+    }
+    
+    private void checkAtBottom()
+    {
+        //when the note reached the bottom edge, remove the note and subtract points from total score
+        if (isAtEdge())
+        {
             MyWorld world = (MyWorld)getWorld();
-           world.addScore(-15);
-      
-           world.removeObject(this);
+            world.removeObject(this);
+            world.addScore(-25);
         }
+        
     }
 }

@@ -199,7 +199,7 @@ public class MyWorld extends World
                         Plus newStationaryNote = new Plus(false);
                         addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
                     }
-                     else if (realNotes[currentNote] == "−")
+                    else if (realNotes[currentNote] == "−")
                     {
                         // Falling note
                         Minus newFallingNote = new Minus(true);
@@ -209,7 +209,7 @@ public class MyWorld extends World
                         Minus newStationaryNote = new Minus(false);
                         addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
                     }
-                     else if (realNotes[currentNote] == "╳")
+                    else if (realNotes[currentNote] == "╳")
                     {
                         // Falling note
                         Cross newFallingNote = new Cross(true);

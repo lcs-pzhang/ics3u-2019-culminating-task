@@ -25,8 +25,14 @@ public class Cross extends Actor
      */
     public void act() 
     {
-        // Fall
-        setLocation(getX(), getY() + 7);
+        // Move the arrow down
+        if (shouldFall == true)
+        {
+            // Fall
+            setLocation(getX(), getY() + 3);
+        }
+        
+        checkAtBottom();
     }  
     
     /**
@@ -40,11 +46,18 @@ public class Cross extends Actor
            world.addScore(10);
            
            world.removeObject(this);
-        } else {
-           MyWorld world = (MyWorld)getWorld();
-           world.addScore(-15);
-      
-           world.removeObject(this);
+        } 
+    }
+    
+    private void checkAtBottom()
+    {
+        //when the note reached the bottom edge, remove the note and subtract points from total score
+        if (isAtEdge())
+        {
+            MyWorld world = (MyWorld)getWorld();
+            world.removeObject(this);
+            world.addScore(-25);
         }
+        
     }
 }
