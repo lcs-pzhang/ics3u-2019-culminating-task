@@ -10,6 +10,7 @@ public class Star extends Actor
 {
     private int speed;
     private boolean shouldFall;
+    private int frames;
     
     /**
      * Constructor – runs once when the star is created
@@ -17,6 +18,7 @@ public class Star extends Actor
     Star(boolean starShouldFall)
     {
         shouldFall = starShouldFall;
+        frames = 0;
     }
     
     /**
@@ -25,6 +27,9 @@ public class Star extends Actor
      */
     public void act() 
     {
+        // Track animation frames
+        frames +=1;
+
         // Move the star down
         if (shouldFall == true)
         {
@@ -34,8 +39,22 @@ public class Star extends Actor
         
         checkKeyPress();
         checkAtBottom();
+        if (shouldFall == false)
+        {
+            checkForRemovalTime();
+        }
     }  
 
+    private void checkForRemovalTime()
+    {
+        if (frames == 110)
+        {
+            MyWorld world = (MyWorld)getWorld();
+           
+            world.removeObject(this);
+        }
+    }
+    
     /**
      * Check whether a keyboard key has been pressed and react if it has.
      */
