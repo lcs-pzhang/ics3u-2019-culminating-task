@@ -10,13 +10,25 @@ public class Cross extends Actor
 {
     private int speed;
     private boolean shouldFall;
+    private int frames;
+    private boolean stillInWorld;
+    private int yPositionTargetValue;
     
     /**
      * Constructor – runs once when the cross is created
      */
-    Cross(boolean crossShouldFall)
+    Cross(boolean crossShouldFall, int yPositionTarget)
     {
         shouldFall = crossShouldFall;
+        
+        // Track time
+        frames = 0;
+        
+        // The object begins in the world
+        stillInWorld = true;
+        
+        // Vertical position at which the person needs to press the appropriate key
+        yPositionTargetValue = yPositionTarget;
     }
     
     /**

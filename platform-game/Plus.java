@@ -10,13 +10,26 @@ public class Plus extends Actor
 {
     private int speed;
     private boolean shouldFall;
+    private int frames;
+    private boolean stillInWorld;
+    private int yPositionTargetValue;
     
     /**
      * Constructor – runs once when the plus is created
      */
-    Plus(boolean plusShouldFall)
+    Plus(boolean plusShouldFall, int yPositionTarget)
     {
+        //whether if the plus should fall or not.
         shouldFall = plusShouldFall;
+        
+        // Track time
+        frames = 0;
+        
+        // The object begins in the world
+        stillInWorld = true;
+        
+        // Vertical position at which the person needs to press the appropriate key
+        yPositionTargetValue = yPositionTarget;
     }
     
     /**
