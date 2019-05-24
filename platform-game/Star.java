@@ -11,14 +11,21 @@ public class Star extends Actor
     private int speed;
     private boolean shouldFall;
     private int frames;
+    private boolean stillInWorld;
     
     /**
      * Constructor – runs once when the star is created
      */
     Star(boolean starShouldFall)
     {
+        // Whether this star should fall
         shouldFall = starShouldFall;
+        
+        // Track time
         frames = 0;
+        
+        // The object begins in the world
+        stillInWorld = true;
     }
     
     /**
@@ -38,8 +45,11 @@ public class Star extends Actor
         }
         
         checkKeyPress();
-        checkAtBottom();
-        if (shouldFall == false)
+        if (stillInWorld == true)
+        {
+            checkAtBottom();
+        }
+        if (shouldFall == false && stillInWorld == true)
         {
             checkForRemovalTime();
         }
@@ -50,7 +60,7 @@ public class Star extends Actor
         if (frames == 110)
         {
             MyWorld world = (MyWorld)getWorld();
-           
+            stillInWorld = false;
             world.removeObject(this);
         }
     }
@@ -61,10 +71,11 @@ public class Star extends Actor
     private void checkKeyPress()
     {
         //if the correct keys are pressed, then the world will add points to the total score and remove that note
-        if (Greenfoot.isKeyDown("left + right")) 
+        if (Greenfoot.isKeyDown("left")) 
         {
             MyWorld world = (MyWorld)getWorld();
             world.addScore(15);
+            stillInWorld = false;
             world.removeObject(this);
         }
     }
@@ -75,6 +86,7 @@ public class Star extends Actor
         if (isAtEdge())
         {
             MyWorld world = (MyWorld)getWorld();
+            stillInWorld = false;
             world.removeObject(this);
             world.addScore(-25);
         }
