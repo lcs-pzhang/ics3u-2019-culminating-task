@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Arrow extends Actor
 {
+    //Instance variables
     private int speed;
     private boolean shouldFall;
     private int frames;
@@ -50,6 +51,8 @@ public class Arrow extends Actor
         }
         
         checkKeyPress();
+        
+        //This will determine which method to use depending if the current note(s) are still in the world or not.
         if (stillInWorld == true)
         {
             checkAtBottom();
@@ -63,6 +66,8 @@ public class Arrow extends Actor
 
     private void checkForRemovalTime()
     {
+        //When the frames is 110 for each note and upcoming note, then the world will remove the note(s). This also when each falling note 
+        //should be pressed right before the falling/stationary notes dissappear.
         if (frames == 110)
         {
             MyWorld world = (MyWorld)getWorld();
