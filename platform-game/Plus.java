@@ -38,7 +38,10 @@ public class Plus extends Actor
      */
     public void act() 
     {
-        // Move the arrow down
+        // Track animation frames
+        frames +=1;
+        
+        // Move the plus down
         if (shouldFall == true)
         {
             // Fall

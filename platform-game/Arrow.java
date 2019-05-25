@@ -39,6 +39,9 @@ public class Arrow extends Actor
      */
     public void act() 
     {
+        // Track animation frames
+        frames +=1;
+        
         // Move the arrow down
         if (shouldFall == true)
         {

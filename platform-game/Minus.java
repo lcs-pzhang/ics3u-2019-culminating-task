@@ -37,7 +37,10 @@ public class Minus extends Actor
      */
     public void act() 
     {
-        // Move the star down
+        // Track animation frames
+        frames +=1;
+        
+        // Move the minus down
         if (shouldFall == true)
         {
             // Fall

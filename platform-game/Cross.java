@@ -38,7 +38,10 @@ public class Cross extends Actor
      */
     public void act() 
     {
-        // Move the arrow down
+        // Track animation frames
+        frames +=1;
+        
+        // Move the cross down
         if (shouldFall == true)
         {
             // Fall
