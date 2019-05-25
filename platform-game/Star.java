@@ -13,7 +13,7 @@ public class Star extends Actor
     private int frames;
     private boolean stillInWorld;
     private int yPositionTargetValue;
-    
+
     /**
      * Constructor – runs once when the star is created
      */
@@ -21,17 +21,17 @@ public class Star extends Actor
     {
         // Whether this star should fall
         shouldFall = starShouldFall;
-        
+
         // Track time
         frames = 0;
-        
+
         // The object begins in the world
         stillInWorld = true;
-        
+
         // Vertical position at which the person needs to press the appropriate key
         yPositionTargetValue = yPositionTarget;
     }
-    
+
     /**
      * Act - do whatever the Star wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -47,7 +47,7 @@ public class Star extends Actor
             // Fall
             setLocation(getX(), getY() + 3);
         }
-        
+
         checkKeyPress();
         if (stillInWorld == true)
         {
@@ -68,7 +68,7 @@ public class Star extends Actor
             world.removeObject(this);
         }
     }
-    
+
     /**
      * Check whether a keyboard key has been pressed and react if it has.
      */
@@ -76,17 +76,19 @@ public class Star extends Actor
     {
         //if the correct keys are pressed, then the world will add points to the total score and remove that note
         if (Greenfoot.isKeyDown("left") &&
-            Greenfoot.isKeyDown("right") &&
-            getY() <= yPositionTargetValue + 10 &&
-            getY() >= yPositionTargetValue - 10 ) 
+        Greenfoot.isKeyDown("right") &&
+        getY() <= yPositionTargetValue + 10 &&
+        getY() >= yPositionTargetValue - 10 ) 
         {
             MyWorld world = (MyWorld)getWorld();
             world.addScore(15);
+            GreenfootSound sound = new GreenfootSound("star.mp3");
+            sound.play();
             stillInWorld = false;
             world.removeObject(this);
         }
     }
-    
+
     private void checkAtBottom()
     {
         //when the note reached the bottom edge, remove the note and subtract points from total score
@@ -97,6 +99,6 @@ public class Star extends Actor
             world.removeObject(this);
             world.addScore(-25);
         }
-        
+
     }
 }

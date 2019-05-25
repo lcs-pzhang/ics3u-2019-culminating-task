@@ -83,6 +83,8 @@ public class Arrow extends Actor
         {
            MyWorld world = (MyWorld)getWorld();
            world.addScore(10);
+            GreenfootSound sound = new GreenfootSound("star.mp3");
+           sound.play();
            stillInWorld = false;
            world.removeObject(this);
         } 
