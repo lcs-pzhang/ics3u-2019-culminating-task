@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    //Instance variables
     private int score;
     private int frames;
     private GreenfootImage bubble[]; 
@@ -19,6 +20,7 @@ public class MyWorld extends World
     private int arrow;
     private int minus;
 
+    //This is an array for which type of note will fall in order throughout the song
     private String[] realNotes = { "★", "★", "★", "★", "+",
             "+", "−", "−", "╳", "←", "╳", "←", "╳", 
             "←", "+", "+", "+", "−", "−", "★", "★", "★",
@@ -30,6 +32,7 @@ public class MyWorld extends World
             "★", "+", "+", "+", "←", "←", "←", "←", "−", 
             "−", "−", "╳", "╳", "╳"};
 
+    //This is the array as a reference for which keys to press in order to hit all of the notes
     private String[] realKeys = { "left + right", "left + right", "left + right",
             "left + right", "up", "up", "down", "down", "right", "left", "right", "left",
             "right", "left", "up", "up", "up", "down", "down", "left + right",
@@ -42,6 +45,7 @@ public class MyWorld extends World
             "left + right", "up", "up", "up", "left", "left", "left", "left", "down", 
             "down", "down", "right", "right", "right"};
 
+    //This array gives us the value of when each note will fall/appear (in seconds) after the song begins
     private int[] delay = {2, 4, 6, 8, 10, 11, 13, 14, 16,
             19, 21, 23, 25, 27, 28, 30, 31, 33, 35, 37, 39, 41,
             43, 44, 44, 45, 47, 48, 50, 50, 50, 52, 54, 55,
@@ -49,7 +53,8 @@ public class MyWorld extends World
             73, 75, 75, 77, 77, 77, 79, 80, 80, 81, 81,
             83, 85, 85, 87, 88, 90, 91, 92, 93, 93, 93,
             94, 94, 95, 95, 97, 97, 99, 99, 100, 100, 103, 103, 103};
-
+    
+    //This array gives us the value of the predetermined x positions of each falling/stationary notes
     private int[] xPosition = {495, 491, 487, 483, 460, 460,100,
             104, 108, 112, 150, 150, 175, 179, 183, 187, 195, 195,
             200, 206, 210, 220, 225, 220, 225, 230, 235, 240, 245,
@@ -59,6 +64,7 @@ public class MyWorld extends World
             370, 371, 379, 385, 383, 392, 395, 397, 400, 420, 421, 
             417, 440, 441, 444, 450};
 
+    //This array gives the us the value of the predetermined y positions of each falling/stationary notes
     private int[] yPosition = {350, 350, 350, 350, 330, 325, 150,
             140, 130, 160, 165, 170, 171, 173, 175, 177, 177, 185,
             190, 193, 193, 195, 200, 200, 205, 200, 200, 210, 214,
@@ -76,15 +82,21 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(498, 372, 1); 
+        
+        //Initial score
         score = 0;
+        
+        //This will allow us to see the score
         showScore();
+        
+        //Inital time
         time = 9400;
+        
+        //This will allow us to see the time, but due to it not being a major component of the game, it's just off to the side.
         showTime();
-        //Start the song
-        // GreenfootSound sound = new GreenfootSound("Gift.mp3");
-        // sound.play();
-
+        
         // Add a Bubble object
+        //Put each new image in the center of the world in order for the full image to show when being looped.
         Bubbles background = new Bubbles();
         addObject(background, getWidth() / 2, getHeight() / 2);
 
@@ -97,12 +109,16 @@ public class MyWorld extends World
 
     public void act()
     {
+        //This will allow us to keep track of the time running.
         countTime();
+        
+        //This will allow us to check if the notes are falling or stationary, and when will they fall.
         checkForNotes();
     }
 
     public void addScore(int points)
     {
+        //This will show our score as an interger value.
         score = score + points;
         showScore(); 
     }
@@ -129,7 +145,8 @@ public class MyWorld extends World
         {
             showText("Perfect: " + score, 70, 9); 
         }
-
+        
+        //This will display the song name on the world
         showText("[Gift] From The Princess Who Brought Sleep", 255, 29);
     }
 
@@ -142,12 +159,15 @@ public class MyWorld extends World
     {
         time--;
         showTime();
+        
+        //When the time is 9399, this will begin playing the song
         if (time == 9399)
         {
             GreenfootSound sound = new GreenfootSound("Gift.mp3");
             sound.play();  
         }
 
+        //When the time reaches 0, it will completely stop the program
         if (time == 0)
         {
             Greenfoot.stop();
@@ -171,7 +191,7 @@ public class MyWorld extends World
             int currentSecond = frames / 60;
             showText("" + currentSecond, getWidth() - 100, 100);
 
-            //for each second, we're looping over every element of the real notes array/
+            //for each second, we're looping over every element of the real notes array
             for (int currentNote = 0; currentNote < realNotes.length; currentNote +=1)
             {
 

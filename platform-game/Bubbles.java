@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bubbles extends Actor
 {
+    //Instance variables
     private GreenfootImage bubble[];
     private int frames;
     private static final int delay = 5;
@@ -18,7 +19,7 @@ public class Bubbles extends Actor
     Bubbles()
     {
         //Begin with the first bubble image  which will  be the the 'bubble'
-        //array of 30 values
+        // this is an array of 30 values
         bubble = new GreenfootImage[30];
 
         //loop through the images from the images folder
@@ -37,7 +38,8 @@ public class Bubbles extends Actor
      */
     public void act() 
     {
-        // Track frames / time in scenario
+        // Track frames / time in scenario. //Frames will go up by one.
+        
         frames += 1;
         
 
