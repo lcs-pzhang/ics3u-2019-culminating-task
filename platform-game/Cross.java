@@ -19,6 +19,7 @@ public class Cross extends Actor
      */
     Cross(boolean crossShouldFall, int yPositionTarget)
     {
+        //whether if the cross should fall or not
         shouldFall = crossShouldFall;
         
         // Track time
@@ -45,7 +46,15 @@ public class Cross extends Actor
         }
         
         checkKeyPress();
-        checkAtBottom();
+        if (stillInWorld == true)
+        {
+            checkAtBottom();
+        }
+        if (shouldFall == false && stillInWorld == true)
+        {
+            checkForRemovalTime();
+        }
+        
     }  
     
     /**

@@ -19,6 +19,7 @@ public class Arrow extends Actor
      */
     Arrow(boolean arrowShouldFall, int yPositionTarget)
     {
+        //whether if the arrow should fall or not
         shouldFall = arrowShouldFall;
         
         // Track time
@@ -46,7 +47,15 @@ public class Arrow extends Actor
         }
         
         checkKeyPress();
-        checkAtBottom();
+        if (stillInWorld == true)
+        {
+            checkAtBottom();
+        }
+        if (shouldFall == false && stillInWorld == true)
+        {
+            checkForRemovalTime();
+        }
+        
     }  
 
    

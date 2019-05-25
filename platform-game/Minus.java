@@ -19,6 +19,7 @@ public class Minus extends Actor
      */
     Minus(boolean minusShouldFall, int yPositionTarget)
     {
+        //whether the minus should fall or not
         shouldFall = minusShouldFall;
         
         // Track time
@@ -44,7 +45,17 @@ public class Minus extends Actor
         }
         
         checkKeyPress();
-        checkAtBottom();
+        
+        if (stillInWorld == true)
+        {
+            checkAtBottom();
+        }
+        if (shouldFall == false && stillInWorld == true)
+        {
+            checkForRemovalTime();
+        }
+        
+        
     } 
     
     /**

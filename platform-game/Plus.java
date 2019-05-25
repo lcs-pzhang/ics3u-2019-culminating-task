@@ -46,7 +46,16 @@ public class Plus extends Actor
         }
         
         checkKeyPress();
-        checkAtBottom();
+        if (stillInWorld == true)
+        {
+            checkAtBottom();
+        }
+        if (shouldFall == false && stillInWorld == true)
+        {
+            checkForRemovalTime();
+        }
+        
+      
     }  
     
     /**
