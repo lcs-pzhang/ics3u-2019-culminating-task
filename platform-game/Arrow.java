@@ -74,7 +74,9 @@ public class Arrow extends Actor
      private void checkKeyPress()
     {
         //if the correct keys are pressed, then the world will add points to the total score and remove that note
-        if (Greenfoot.isKeyDown("left")) 
+        if (Greenfoot.isKeyDown("left") &&
+            getY() <= yPositionTargetValue + 10 &&
+            getY() >= yPositionTargetValue - 10) 
         {
            MyWorld world = (MyWorld)getWorld();
            world.addScore(10);

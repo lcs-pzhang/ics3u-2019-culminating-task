@@ -73,7 +73,9 @@ public class Cross extends Actor
      private void checkKeyPress()
     {
         //if the correct keys are pressed, then the world will add points to the total score and remove that note
-        if (Greenfoot.isKeyDown("right")) 
+        if (Greenfoot.isKeyDown("right") &&
+            getY() <= yPositionTargetValue + 10 &&
+            getY() >= yPositionTargetValue - 10) 
         {
            MyWorld world = (MyWorld)getWorld();
            world.addScore(10);
