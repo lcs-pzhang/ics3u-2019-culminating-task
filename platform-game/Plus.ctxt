@@ -1,15 +1,17 @@
 #BlueJ class context
 comment0.target=Plus
 comment0.text=\n\ Write\ a\ description\ of\ class\ Plus\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=plusShouldFall
-comment1.target=Plus(boolean)
+comment1.params=plusShouldFall\ yPositionTarget
+comment1.target=Plus(boolean,\ int)
 comment1.text=\n\ Constructor\ \u2013\u00A0runs\ once\ when\ the\ plus\ is\ created\n
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\n\ Act\ -\ do\ whatever\ the\ Plus\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment3.params=
-comment3.target=void\ checkKeyPress()
-comment3.text=\n\ Check\ whether\ a\ keyboard\ key\ has\ been\ pressed\ and\ react\ if\ it\ has.\n
+comment3.target=void\ checkForRemovalTime()
 comment4.params=
-comment4.target=void\ checkAtBottom()
-numComments=5
+comment4.target=void\ checkKeyPress()
+comment4.text=\n\ Check\ whether\ a\ keyboard\ key\ has\ been\ pressed\ and\ react\ if\ it\ has.\n
+comment5.params=
+comment5.target=void\ checkAtBottom()
+numComments=6

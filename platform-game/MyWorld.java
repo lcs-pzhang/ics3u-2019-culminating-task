@@ -192,41 +192,41 @@ public class MyWorld extends World
                     else if (realNotes[currentNote] == "+")
                     {
                         // Falling note
-                        Plus newFallingNote = new Plus(true);
+                        Plus newFallingNote = new Plus(true, yPosition[currentNote]);
                         addObject(newFallingNote, xPosition[currentNote], 0);
 
                         // Stationary note
-                        Plus newStationaryNote = new Plus(false);
+                        Plus newStationaryNote = new Plus(false, 0);
                         addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
                     }
                     else if (realNotes[currentNote] == "−")
                     {
                         // Falling note
-                        Minus newFallingNote = new Minus(true);
+                        Minus newFallingNote = new Minus(true, yPosition[currentNote]);
                         addObject(newFallingNote, xPosition[currentNote], 0);
 
                         // Stationary note
-                        Minus newStationaryNote = new Minus(false);
+                        Minus newStationaryNote = new Minus(false, 0);
                         addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
                     }
                     else if (realNotes[currentNote] == "╳")
                     {
                         // Falling note
-                        Cross newFallingNote = new Cross(true);
+                        Cross newFallingNote = new Cross(true, yPosition[currentNote]);
                         addObject(newFallingNote, xPosition[currentNote], 0);
 
                         // Stationary note
-                        Cross newStationaryNote = new Cross(false);
+                        Cross newStationaryNote = new Cross(false, 0);
                         addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
                     }
                     else if (realNotes[currentNote] == "←")
                     {
                         // Falling note
-                        Arrow newFallingNote = new Arrow(true);
+                        Arrow newFallingNote = new Arrow(true, yPosition[currentNote]);
                         addObject(newFallingNote, xPosition[currentNote], 0);
 
                         // Stationary note
-                        Arrow newStationaryNote = new Arrow(false);
+                        Arrow newStationaryNote = new Arrow(false, 0);
                         addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
                     }
                 }
