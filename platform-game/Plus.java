@@ -55,8 +55,17 @@ public class Plus extends Actor
             checkForRemovalTime();
         }
         
-      
     }  
+    
+    private void checkForRemovalTime()
+    {
+        if (frames == 110)
+        {
+            MyWorld world = (MyWorld)getWorld();
+            stillInWorld = false;
+            world.removeObject(this);
+        }
+    }
     
     /**
      * Check whether a keyboard key has been pressed and react if it has.
