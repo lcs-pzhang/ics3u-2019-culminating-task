@@ -79,7 +79,7 @@ public class Minus extends Actor
         {
            MyWorld world = (MyWorld)getWorld();
            world.addScore(10);
-      
+           stillInWorld = false;
            world.removeObject(this);
         } 
     
@@ -91,6 +91,7 @@ public class Minus extends Actor
         if (isAtEdge())
         {
             MyWorld world = (MyWorld)getWorld();
+            stillInWorld = false;
             world.removeObject(this);
             world.addScore(-25);
         }
