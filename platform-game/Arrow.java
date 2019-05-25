@@ -14,7 +14,7 @@ public class Arrow extends Actor
     private int frames;
     private boolean stillInWorld;
     private int yPositionTargetValue;
-    
+
     /**
      * Constructor – runs once when the arrow is created
      */
@@ -22,18 +22,17 @@ public class Arrow extends Actor
     {
         //whether if the arrow should fall or not
         shouldFall = arrowShouldFall;
-        
+
         // Track time
         frames = 0;
-        
+
         // The object begins in the world
         stillInWorld = true;
-        
+
         // Vertical position at which the person needs to press the appropriate key
         yPositionTargetValue = yPositionTarget;
     }
-    
-    
+
     /**
      * Act - do whatever the Arrow wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -42,16 +41,16 @@ public class Arrow extends Actor
     {
         // Track animation frames
         frames +=1;
-        
+
         // Move the arrow down
         if (shouldFall == true)
         {
             // Fall
             setLocation(getX(), getY() + 3);
         }
-        
+
         checkKeyPress();
-        
+
         //This will determine which method to use depending if the current note(s) are still in the world or not.
         if (stillInWorld == true)
         {
@@ -61,7 +60,7 @@ public class Arrow extends Actor
         {
             checkForRemovalTime();
         }
-        
+
     }  
 
     private void checkForRemovalTime()
@@ -75,26 +74,25 @@ public class Arrow extends Actor
             world.removeObject(this);
         }
     }
-    
+
     /**
      * Check whether a keyboard key has been pressed and react if it has.
      */
-     private void checkKeyPress()
+    private void checkKeyPress()
     {
         //if the correct keys are pressed, then the world will add points to the total score and remove that note
         if (Greenfoot.isKeyDown("left") &&
-            getY() <= yPositionTargetValue + 10 &&
-            getY() >= yPositionTargetValue - 10) 
+        getY() <= yPositionTargetValue + 10 &&
+        getY() >= yPositionTargetValue - 10) 
         {
-           MyWorld world = (MyWorld)getWorld();
-           world.addScore(10);
-            GreenfootSound sound = new GreenfootSound("star.mp3");
-           sound.play();
-           stillInWorld = false;
-           world.removeObject(this);
+            MyWorld world = (MyWorld)getWorld();
+            world.addScore(10);
+
+            stillInWorld = false;
+            world.removeObject(this);
         } 
     }
-    
+
     private void checkAtBottom()
     {
         //when the note reached the bottom edge, remove the note and subtract points from total score
@@ -105,6 +103,6 @@ public class Arrow extends Actor
             world.removeObject(this);
             world.addScore(-25);
         }
-        
+
     }
 }

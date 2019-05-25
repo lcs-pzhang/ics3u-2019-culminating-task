@@ -53,7 +53,7 @@ public class MyWorld extends World
             73, 75, 75, 77, 77, 77, 79, 80, 80, 81, 81,
             83, 85, 85, 87, 88, 90, 91, 92, 93, 93, 93,
             94, 94, 95, 95, 97, 97, 99, 99, 100, 100, 103, 103, 103};
-    
+
     //This array gives us the value of the predetermined x positions of each falling/stationary notes
     private int[] xPosition = {495, 491, 487, 483, 460, 460,100,
             104, 108, 112, 150, 150, 175, 179, 183, 187, 195, 195,
@@ -82,19 +82,19 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(498, 372, 1); 
-        
+
         //Initial score
         score = 0;
-        
+
         //This will allow us to see the score
         showScore();
-        
+
         //Inital time
         time = 9400;
-        
+
         //This will allow us to see the time, but due to it not being a major component of the game, it's just off to the side.
         showTime();
-        
+
         // Add a Bubble object
         //Put each new image in the center of the world in order for the full image to show when being looped.
         Bubbles background = new Bubbles();
@@ -111,7 +111,7 @@ public class MyWorld extends World
     {
         //This will allow us to keep track of the time running.
         countTime();
-        
+
         //This will allow us to check if the notes are falling or stationary, and when will they fall.
         checkForNotes();
     }
@@ -145,7 +145,7 @@ public class MyWorld extends World
         {
             showText("Perfect: " + score, 70, 9); 
         }
-        
+
         //This will display the song name on the world
         showText("[Gift] From The Princess Who Brought Sleep", 255, 29);
     }
@@ -159,7 +159,7 @@ public class MyWorld extends World
     {
         time--;
         showTime();
-        
+
         //When the time is 9399, this will begin playing the song
         if (time == 9399)
         {
