@@ -29,7 +29,7 @@ public class MyWorld extends World
             "+","★", "★", "★", "★", "←", "╳", "+", "−",
             "←", "−", "−", "+", "−", "←", "+",
             "╳","←", "╳", "←", "★", "★"};
- 
+
     //This array gives us the value of when each note will fall/appear (in seconds) after the song begins
     private int[] delay = {2, 4, 6, 8, 10, 13, 17, 21, 25,
             27, 30, 33, 37, 41, 43, 48, 50, 52, 54, 57,
@@ -108,32 +108,32 @@ public class MyWorld extends World
         //These will show the possible score outcomes at the end of the game
         if (score <= 20)
         {
-            showText("Not Cleared: " + score, 70, 9); 
+            showText("Not Cleared: " + score, 90, 9); 
         }
 
         if ( score >= 21 && score <= 174)
         {
-            showText("Bad: " + score, 70, 9); 
+            showText("Bad: " + score, 90, 9); 
         }
 
         if (score >= 175 && score <= 349)
         {
-            showText("Passed: " + score, 70, 9); 
+            showText("Passed: " + score, 90, 9); 
         }
 
         if (score >= 350 && score <= 500)
         {
-            showText("Great: " + score, 70, 9); 
+            showText("Great: " + score, 90, 9); 
         }
-        
+
         if (score >= 501 && score <= 664)
         {
-            showText("Great: " + score, 70, 9); 
+            showText("Execellent: " + score, 90, 9); 
         }
-        
+
         if (score >= 665)
         {
-            showText("Perfect: " + score, 70, 9); 
+            showText("Perfect: " + score, 90, 9); 
         }
 
         //This will display the song name on the world
@@ -191,51 +191,51 @@ public class MyWorld extends World
                     //add just that one note (whatever note corresponds to currentNote)
                     if (realNotes[currentNote] == "★")
                     {
-                        // Falling note
+                        // Falling note of star
                         Star newFallingNote = new Star(true, yPosition[currentNote]);
                         addObject(newFallingNote, xPosition[currentNote], 0);
 
-                        // Stationary note
+                        // Stationary note of star
                         Star newStationaryNote = new Star(false, 0);
                         addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
                     }
                     else if (realNotes[currentNote] == "+")
                     {
-                        // Falling note
+                        // Falling note of plus
                         Plus newFallingNote = new Plus(true, yPosition[currentNote]);
                         addObject(newFallingNote, xPosition[currentNote], 0);
 
-                        // Stationary note
+                        // Stationary note of plus
                         Plus newStationaryNote = new Plus(false, 0);
                         addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
                     }
                     else if (realNotes[currentNote] == "−")
                     {
-                        // Falling note
+                        // Falling note of minus
                         Minus newFallingNote = new Minus(true, yPosition[currentNote]);
                         addObject(newFallingNote, xPosition[currentNote], 0);
 
-                        // Stationary note
+                        // Stationary note of minus
                         Minus newStationaryNote = new Minus(false, 0);
                         addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
                     }
                     else if (realNotes[currentNote] == "╳")
                     {
-                        // Falling note
+                        // Falling note of cross
                         Cross newFallingNote = new Cross(true, yPosition[currentNote]);
                         addObject(newFallingNote, xPosition[currentNote], 0);
 
-                        // Stationary note
+                        // Stationary note of cross
                         Cross newStationaryNote = new Cross(false, 0);
                         addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
                     }
                     else if (realNotes[currentNote] == "←")
                     {
-                        // Falling note
+                        // Falling note of arrow
                         Arrow newFallingNote = new Arrow(true, yPosition[currentNote]);
                         addObject(newFallingNote, xPosition[currentNote], 0);
 
-                        // Stationary note
+                        // Stationary note of arrow
                         Arrow newStationaryNote = new Arrow(false, 0);
                         addObject(newStationaryNote, xPosition[currentNote], yPosition[currentNote]);
                     }

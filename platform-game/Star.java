@@ -50,7 +50,7 @@ public class Star extends Actor
         }
 
         checkKeyPress();
-        
+
         //This will determine which method to use depending if the current note(s) are still in the world or not.
         if (stillInWorld == true)
         {
@@ -87,7 +87,7 @@ public class Star extends Actor
         {
             MyWorld world = (MyWorld)getWorld();
             world.addScore(15);
-            
+
             stillInWorld = false;
             world.removeObject(this);
         }
