@@ -51,7 +51,7 @@ public class MyWorld extends World
             140, 130, 160, 165, 170, 171, 173, 175, 177, 185,
             190, 193, 193, 195, 200, 200, 205, 200, 200, 210, 214,
             220, 221, 225, 227, 230, 230, 230, 235, 239, 241,
-            243, 248, 250, 100, 152, 164, 185, 177, 197, 209,
+            243, 248, 250, 225, 195, 164, 185, 177, 197, 209,
             221, 213, 235, 250, 242, 204, 238, 270, 243, 285, 270};
 
     /**
@@ -108,20 +108,30 @@ public class MyWorld extends World
         //These will show the possible score outcomes at the end of the game
         if (score <= 20)
         {
+            showText("Not Cleared: " + score, 70, 9); 
+        }
+
+        if ( score >= 21 && score <= 174)
+        {
             showText("Bad: " + score, 70, 9); 
         }
 
-        if (score > 50)
+        if (score > 175)
         {
-            showText("Okay: " + score, 70, 9); 
+            showText("Passed: " + score, 70, 9); 
         }
 
-        if (score > 200)
+        if (score > 350)
         {
             showText("Great: " + score, 70, 9); 
         }
-
-        if (score >= 500)
+        
+        if (score > 350)
+        {
+            showText("Great: " + score, 70, 9); 
+        }
+        
+        if (score >= 665)
         {
             showText("Perfect: " + score, 70, 9); 
         }
