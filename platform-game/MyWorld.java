@@ -48,10 +48,10 @@ public class MyWorld extends World
 
     //This array gives the us the value of the predetermined y positions of each falling/stationary notes
     private int[] yPosition = {350, 350, 350, 350, 330, 325, 150,
-            140, 130, 160, 165, 170, 171, 173, 175, 177, 185,
+            170, 190, 179, 165, 170, 171, 173, 175, 177, 185,
             190, 193, 193, 195, 200, 200, 205, 200, 200, 210, 214,
             220, 221, 225, 227, 230, 230, 230, 235, 239, 241,
-            243, 248, 250, 225, 195, 164, 185, 177, 197, 209,
+            243, 248, 250, 225, 195, 204, 185, 177, 197, 209,
             221, 213, 235, 250, 242, 204, 238, 270, 243, 285, 270};
 
     /**
@@ -161,7 +161,7 @@ public class MyWorld extends World
         if (time == 0)
         {
             Greenfoot.stop();
-            
+
             //A line from the song and the time of this happening in E.C.
             showText("Now Go To Sleep (609 E.C.)", 150, 360);
         }
