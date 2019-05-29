@@ -161,6 +161,9 @@ public class MyWorld extends World
         if (time == 0)
         {
             Greenfoot.stop();
+            
+            //A line from the song and the time of this happening in E.C.
+            showText("Now Go To Sleep (609 E.C.)", 150, 360);
         }
 
     }
@@ -179,7 +182,7 @@ public class MyWorld extends World
         if (frames % 60 == 0)
         {
             int currentSecond = frames / 60;
-            showText("" + currentSecond, getWidth() - 100, 100);
+            //showText("" + currentSecond, getWidth() - 100, 100);
 
             //for each second, we're looping over every element of the real notes array
             for (int currentNote = 0; currentNote < realNotes.length; currentNote +=1)
