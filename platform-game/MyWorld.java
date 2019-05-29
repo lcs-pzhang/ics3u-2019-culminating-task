@@ -116,17 +116,17 @@ public class MyWorld extends World
             showText("Bad: " + score, 70, 9); 
         }
 
-        if (score > 175)
+        if (score >= 175 && score <= 349)
         {
             showText("Passed: " + score, 70, 9); 
         }
 
-        if (score > 350)
+        if (score >= 350 && score <= 500)
         {
             showText("Great: " + score, 70, 9); 
         }
         
-        if (score > 350)
+        if (score >= 501 && score <= 664)
         {
             showText("Great: " + score, 70, 9); 
         }
